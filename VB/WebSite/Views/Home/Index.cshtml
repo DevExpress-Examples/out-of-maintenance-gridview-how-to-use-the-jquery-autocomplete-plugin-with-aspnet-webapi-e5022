@@ -1,0 +1,48 @@
+@model System.Collections.IEnumerable
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    ul.ui-autocomplete {
+        border: 1px solid rgba(83, 82, 82, 0.85);
+        list-style-type: none;
+        margin: 0px;
+        font: 11px Verdana;
+        overflow: auto;
+        padding: 0px;
+        width: 168px;
+    }
+    ul.ui-autocomplete a.ui-corner-all {
+        background-color: rgba(245, 245, 245, 0.95);
+        display: block;
+        padding-left:3px;
+    }
+</style>
+<script>
+    function onTxtInit(s, e) {
+        var url = '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "WebApi" })';
+        $(s.GetInputElement()).autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url,
+                    data: { query: request.term },
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.FirstName, value: item.FirstName }
+                        }));
+                    }
+                });
+
+            },
+            select: function (event, ui) {
+                $(s.GetInputElement()).val(ui.item.value);
+                return false;
+            },
+            minLength: 3
+        });
+    }
+</script>
+<h2>Index</h2>
+@Html.Partial("GridViewPartial", Model)
