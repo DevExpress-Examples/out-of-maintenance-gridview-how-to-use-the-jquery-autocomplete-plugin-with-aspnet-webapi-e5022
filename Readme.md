@@ -1,3 +1,15 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [WebApiConfig.cs](./CS/WebSite/App_Start/WebApiConfig.cs) (VB: [WebApiConfig.vb](./VB/WebSite/App_Start/WebApiConfig.vb))
+* [HomeController.cs](./CS/WebSite/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/WebSite/Controllers/HomeController.vb))
+* [WebApiController.cs](./CS/WebSite/Controllers/WebApiController.cs) (VB: [WebApiController.vb](./VB/WebSite/Controllers/WebApiController.vb))
+* [Global.asax](./CS/WebSite/Global.asax)
+* [Global.asax.cs](./CS/WebSite/Global.asax.cs)
+* [MyModel.cs](./CS/WebSite/Models/MyModel.cs) (VB: [MyModel.vb](./VB/WebSite/Models/MyModel.vb))
+* [GridViewPartial.cshtml](./CS/WebSite/Views/Home/GridViewPartial.cshtml)
+* [Index.cshtml](./CS/WebSite/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to use the jQuery autocomplete plugin with ASP.NET WebApi
 
 
